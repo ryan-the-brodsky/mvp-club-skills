@@ -18,7 +18,6 @@ Vibe coding tools that turn new builders into confident AI-first practitioners.
 |--------|--------|-------------|
 | **prd-manager** | `generate`, `update`, `compare` | Complete PRD management suite |
 | **work-loop-coach** | `coach` | Work Loop methodology guidance |
-| **evaluate-my-build** | `evaluate` | Systematic build evaluation |
 
 ## Skill Invocation
 
@@ -29,7 +28,6 @@ prd-manager:generate      # Create a new PRD
 prd-manager:update        # Update PRD after building
 prd-manager:compare       # Compare PRD to implementation
 work-loop-coach:coach     # Get methodology guidance
-evaluate-my-build:evaluate # Evaluate your build
 ```
 
 ## The Work Loop
@@ -42,7 +40,7 @@ These skills support the MVP Club Work Loop methodology:
 |-------|--------------|
 | Articulate | `prd-manager:generate` |
 | Build/Prompt/Execute | `work-loop-coach:coach` |
-| Evaluate | `evaluate-my-build:evaluate`, `prd-manager:compare` |
+| Evaluate | `prd-manager:compare` |
 | Iterate | `prd-manager:update` |
 
 ## Post-Session Hooks
