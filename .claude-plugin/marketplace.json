@@ -1,0 +1,37 @@
+{
+  "name": "mvp-club-skills",
+  "owner": {
+    "name": "MVP Club Consulting",
+    "url": "https://mvpclub.io"
+  },
+  "metadata": {
+    "description": "Vibe coding tools that turn new builders into confident AI-first practitioners. Built on the Work Loop methodology.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "prd-generator",
+      "source": "./plugins/prd-generator",
+      "description": "Structured PRD creation for vibe coders. Asks the right questions before you start building.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "tags": ["planning", "prd", "requirements", "beginner-friendly"]
+    },
+    {
+      "name": "work-loop-coach",
+      "source": "./plugins/work-loop-coach",
+      "description": "Embeds the Work Loop methodology (Articulate → Build → Prompt → Execute → Evaluate → Iterate) into your building process.",
+      "version": "1.0.0",
+      "category": "methodology",
+      "tags": ["workflow", "coaching", "methodology", "human-ai-teams"]
+    },
+    {
+      "name": "evaluate-my-build",
+      "source": "./plugins/evaluate-my-build",
+      "description": "Systematic evaluation of your build against your original goals. Celebrates wins, identifies gaps, suggests next steps.",
+      "version": "1.0.0",
+      "category": "quality",
+      "tags": ["evaluation", "review", "iteration", "feedback"]
+    }
+  ]
+}

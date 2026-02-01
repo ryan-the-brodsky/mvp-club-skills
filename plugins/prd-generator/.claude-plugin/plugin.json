@@ -1,0 +1,9 @@
+{
+  "name": "prd-generator",
+  "description": "Structured PRD creation for vibe coders. Walks you through defining what you're building before you start prompting.",
+  "version": "1.0.0",
+  "author": {
+    "name": "MVP Club Consulting"
+  },
+  "keywords": ["prd", "planning", "requirements", "vibe-coding"]
+}
