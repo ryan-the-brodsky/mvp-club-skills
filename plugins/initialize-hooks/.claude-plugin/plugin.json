@@ -1,0 +1,27 @@
+{
+  "name": "initialize-hooks",
+  "description": "One-command setup for MVP Club Skills hooks. Interactive wizard to configure validation gates and coaching prompts.",
+  "version": "1.0.0",
+  "author": {
+    "name": "MVP Club Consulting"
+  },
+  "keywords": ["hooks", "setup", "configuration", "onboarding", "wizard"],
+  "skills": [
+    {
+      "name": "setup",
+      "description": "Interactive wizard to set up hooks based on your workflow"
+    },
+    {
+      "name": "profiles",
+      "description": "View available hook profiles and what they include"
+    },
+    {
+      "name": "add-hook",
+      "description": "Add a single hook to your settings"
+    },
+    {
+      "name": "remove-hook",
+      "description": "Remove a hook from your settings"
+    }
+  ]
+}

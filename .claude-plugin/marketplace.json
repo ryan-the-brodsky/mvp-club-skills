@@ -2,7 +2,7 @@
   "name": "mvp-club-skills",
   "owner": {
     "name": "MVP Club Consulting",
-    "url": "https://mvpclub.io"
+    "url": "https://mvpclub.ai"
   },
   "metadata": {
     "description": "Vibe coding tools that turn new builders into confident AI-first practitioners. Built on the Work Loop methodology.",
@@ -90,6 +90,15 @@
         }
       },
       "skills": ["on-new-file", "on-edit", "prompt-me", "configure"]
+    },
+    {
+      "name": "initialize-hooks",
+      "source": "./plugins/initialize-hooks",
+      "description": "One-command setup for MVP Club Skills hooks. Interactive wizard to configure validation gates and coaching prompts.",
+      "version": "1.0.0",
+      "category": "setup",
+      "tags": ["hooks", "setup", "configuration", "onboarding", "wizard"],
+      "skills": ["setup", "profiles", "add-hook", "remove-hook"]
     }
   ]
 }

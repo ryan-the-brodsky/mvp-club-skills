@@ -1,0 +1,141 @@
+{
+  "version": "1.0.0",
+  "description": "Centralized hook definitions for MVP Club Skills. This file is the source of truth for all hook configurations.",
+  "profiles": {
+    "minimal": {
+      "name": "Minimal",
+      "description": "Light guardrails for experienced developers. Just the essentials.",
+      "hooks": ["pre-push"]
+    },
+    "vibe-coder": {
+      "name": "Vibe Coder",
+      "description": "For developers who push directly to main. Validation before deploy plus helpful coaching prompts.",
+      "hooks": ["pre-push", "flow-questions"]
+    },
+    "full": {
+      "name": "Full Suite",
+      "description": "Comprehensive support for new builders. All validation gates and coaching prompts enabled.",
+      "hooks": ["pre-commit", "pre-push", "pre-pr", "flow-questions", "prd-sync"]
+    }
+  },
+  "hooks": {
+    "pre-commit": {
+      "id": "pre-commit",
+      "name": "Pre-Commit Validation",
+      "description": "Quick validation before each commit. Catches obvious issues early.",
+      "trigger": "PreToolUse",
+      "matcher": "git commit",
+      "config": {
+        "hooks": {
+          "PreToolUse": [
+            {
+              "matcher": "Bash(git commit)",
+              "hooks": [
+                {
+                  "type": "skill",
+                  "skill": "build-checkpoint:pre-commit"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "pre-push": {
+      "id": "pre-push",
+      "name": "Pre-Push Validation",
+      "description": "Thorough validation before pushing to main. Your deploy gate for vibe coding.",
+      "trigger": "PreToolUse",
+      "matcher": "git push",
+      "config": {
+        "hooks": {
+          "PreToolUse": [
+            {
+              "matcher": "Bash(git push)",
+              "hooks": [
+                {
+                  "type": "skill",
+                  "skill": "build-checkpoint:pre-push"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "pre-pr": {
+      "id": "pre-pr",
+      "name": "Pre-PR Validation",
+      "description": "Full validation before opening a pull request. Comprehensive checks for code review.",
+      "trigger": "PreToolUse",
+      "matcher": "gh pr create",
+      "config": {
+        "hooks": {
+          "PreToolUse": [
+            {
+              "matcher": "Bash(gh pr create)",
+              "hooks": [
+                {
+                  "type": "skill",
+                  "skill": "build-checkpoint:pre-pr"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "flow-questions": {
+      "id": "flow-questions",
+      "name": "Flow Questions",
+      "description": "Coaching prompts that ask the right questions when you create or edit files.",
+      "trigger": "PostToolUse",
+      "matcher": "Write, Edit",
+      "config": {
+        "hooks": {
+          "PostToolUse": [
+            {
+              "matcher": "Write",
+              "hooks": [
+                {
+                  "type": "skill",
+                  "skill": "flow-questions:on-new-file"
+                }
+              ]
+            },
+            {
+              "matcher": "Edit",
+              "hooks": [
+                {
+                  "type": "skill",
+                  "skill": "flow-questions:on-edit"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "prd-sync": {
+      "id": "prd-sync",
+      "name": "PRD Sync",
+      "description": "Keeps your PRD updated at the end of each session.",
+      "trigger": "Stop",
+      "matcher": null,
+      "config": {
+        "hooks": {
+          "Stop": [
+            {
+              "hooks": [
+                {
+                  "type": "skill",
+                  "skill": "prd-manager:update"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

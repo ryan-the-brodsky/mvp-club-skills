@@ -12,6 +12,23 @@ Vibe coding tools that turn new builders into confident AI-first practitioners.
 /plugin install prd-manager@mvp-club-skills
 ```
 
+## Getting Started with Hooks
+
+The fastest way to set up hooks is with the setup wizard:
+
+```bash
+initialize-hooks:setup
+```
+
+This will walk you through choosing a profile and configure your `~/.claude/settings.json` automatically.
+
+**Profiles available:**
+- **Minimal** - Just pre-push validation
+- **Vibe Coder** - Pre-push + coaching prompts (recommended for most users)
+- **Full Suite** - All validation gates and coaching prompts
+
+See `recommended-hooks.json` for the complete hook definitions (source of truth).
+
 ## Available Plugins
 
 ### Planning & Methodology
@@ -35,6 +52,12 @@ Vibe coding tools that turn new builders into confident AI-first practitioners.
 |--------|--------|-------------|
 | **screenshot-journal** | `capture`, `compare`, `timeline` | Visual build history with annotated screenshots |
 | **flow-questions** | `on-new-file`, `on-edit`, `prompt-me`, `configure` | Hook-driven prompts at the right moments |
+
+### Setup & Configuration
+
+| Plugin | Skills | Description |
+|--------|--------|-------------|
+| **initialize-hooks** | `setup`, `profiles`, `add-hook`, `remove-hook` | One-command setup for hooks |
 
 ## Skill Invocation
 
@@ -75,69 +98,98 @@ These skills support the MVP Club Work Loop methodology:
 
 ## Hooks
 
-### Pre-Commit Validation
+**Recommended:** Use `initialize-hooks:setup` to configure hooks automatically. The wizard will set up your `~/.claude/settings.json` based on your workflow.
 
-Automatically validate before committing:
+All hook definitions are in `recommended-hooks.json` (source of truth).
+
+### Available Hooks
+
+| Hook | Trigger | Description |
+|------|---------|-------------|
+| Pre-commit | Before `git commit` | Quick validation before commits |
+| Pre-push | Before `git push` | Thorough validation before pushing to main |
+| Pre-PR | Before `gh pr create` | Full validation before pull requests |
+| Flow questions | After `Write`/`Edit` | Coaching prompts about validation and UX |
+| PRD sync | End of session | Updates PRD with session changes |
+
+### Manual Hook Configuration
+
+If you prefer to configure hooks manually, here are the JSON configs:
+
+#### Pre-Commit Validation
 
 ```json
 {
   "hooks": {
-    "PreToolUse": {
-      "git commit": ["build-checkpoint:pre-commit"]
-    }
+    "PreToolUse": [
+      {
+        "matcher": "Bash(git commit)",
+        "hooks": [{ "type": "skill", "skill": "build-checkpoint:pre-commit" }]
+      }
+    ]
   }
 }
 ```
 
-### Pre-Push Validation (Recommended for Vibe Coders)
-
-Validate before pushing to main. For vibe coders who push directly to main (no branches/PRs), this is your deploy gate:
+#### Pre-Push Validation (Recommended for Vibe Coders)
 
 ```json
 {
   "hooks": {
-    "PreToolUse": {
-      "git push": ["build-checkpoint:pre-push"]
-    }
+    "PreToolUse": [
+      {
+        "matcher": "Bash(git push)",
+        "hooks": [{ "type": "skill", "skill": "build-checkpoint:pre-push" }]
+      }
+    ]
   }
 }
 ```
 
-### Pre-PR Validation
-
-Full validation before opening a PR:
+#### Pre-PR Validation
 
 ```json
 {
   "hooks": {
-    "PreToolUse": {
-      "gh pr create": ["build-checkpoint:pre-pr"]
-    }
+    "PreToolUse": [
+      {
+        "matcher": "Bash(gh pr create)",
+        "hooks": [{ "type": "skill", "skill": "build-checkpoint:pre-pr" }]
+      }
+    ]
   }
 }
 ```
 
-### Flow Questions (Coaching Prompts)
-
-Get contextual questions while building:
+#### Flow Questions (Coaching Prompts)
 
 ```json
 {
   "hooks": {
-    "PostToolUse": {
-      "Write": ["flow-questions:on-new-file"],
-      "Edit": ["flow-questions:on-edit"]
-    }
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [{ "type": "skill", "skill": "flow-questions:on-new-file" }]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [{ "type": "skill", "skill": "flow-questions:on-edit" }]
+      }
+    ]
   }
 }
 ```
 
-### Keep PRD in Sync
+#### PRD Sync
 
 ```json
 {
   "hooks": {
-    "post_session": ["prd-manager:update"]
+    "Stop": [
+      {
+        "hooks": [{ "type": "skill", "skill": "prd-manager:update" }]
+      }
+    ]
   }
 }
 ```
@@ -172,7 +224,7 @@ To check for new plugins or skills:
 
 MVP Club Consulting helps organizations develop AI-first mindsets and capabilities. We believe the fundamental unit of labor is shifting from the individual to the Human + AI Team.
 
-Learn more at [mvpclub.io](https://mvpclub.io)
+Learn more at [mvpclub.ai](https://mvpclub.ai)
 
 ## Contributing
 
