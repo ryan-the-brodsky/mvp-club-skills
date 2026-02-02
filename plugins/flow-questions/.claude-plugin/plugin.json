@@ -1,0 +1,33 @@
+{
+  "name": "flow-questions",
+  "description": "Hook-driven prompts that ask the right questions at the right moments. Guides vibe coders to think about validation, user experience, and edge cases.",
+  "version": "1.0.0",
+  "author": {
+    "name": "MVP Club Consulting"
+  },
+  "keywords": ["coaching", "validation", "hooks", "questions", "ux", "guidance"],
+  "hooks": {
+    "PostToolUse": {
+      "Write": ["flow-questions:on-new-file"],
+      "Edit": ["flow-questions:on-edit"]
+    }
+  },
+  "skills": [
+    {
+      "name": "on-new-file",
+      "description": "Prompts after creating a new component/file"
+    },
+    {
+      "name": "on-edit",
+      "description": "Prompts after editing code (detects patterns)"
+    },
+    {
+      "name": "prompt-me",
+      "description": "Manually trigger a validation question"
+    },
+    {
+      "name": "configure",
+      "description": "Adjust question frequency and types"
+    }
+  ]
+}

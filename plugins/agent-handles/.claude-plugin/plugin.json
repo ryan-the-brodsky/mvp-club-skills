@@ -1,0 +1,23 @@
+{
+  "name": "agent-handles",
+  "description": "Make your app AI-testable with semantic handles. Audit, suggest, and add agent-handle attributes that enable automated testing with Playwright and other tools.",
+  "version": "1.0.0",
+  "author": {
+    "name": "MVP Club Consulting"
+  },
+  "keywords": ["testing", "automation", "playwright", "accessibility", "agent-handles", "validation"],
+  "skills": [
+    {
+      "name": "audit",
+      "description": "Scan codebase for missing agent-handles on interactive elements"
+    },
+    {
+      "name": "suggest",
+      "description": "Propose agent-handle names following the naming convention"
+    },
+    {
+      "name": "add",
+      "description": "Insert agent-handle attributes into components"
+    }
+  ]
+}

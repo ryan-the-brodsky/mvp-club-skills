@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Vibe coding tools that turn new builders into confident AI-first practitioners. Built on the Work Loop methodology.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
@@ -26,6 +26,70 @@
       "category": "methodology",
       "tags": ["workflow", "coaching", "methodology", "human-ai-teams"],
       "skills": ["coach"]
+    },
+    {
+      "name": "agent-handles",
+      "source": "./plugins/agent-handles",
+      "description": "Make your app AI-testable with semantic handles. Audit, suggest, and add agent-handle attributes for Playwright testing.",
+      "version": "1.0.0",
+      "category": "testing",
+      "tags": ["testing", "automation", "playwright", "accessibility", "validation"],
+      "skills": ["audit", "suggest", "add"]
+    },
+    {
+      "name": "claude-pilot",
+      "source": "./plugins/claude-pilot",
+      "description": "Claude becomes your first user. Test your app with Playwright, walk through user flows, and get a real user's perspective.",
+      "version": "1.0.0",
+      "category": "testing",
+      "tags": ["testing", "playwright", "user-testing", "validation", "screenshots"],
+      "requires": {
+        "mcp": ["playwright"]
+      },
+      "skills": ["walkthrough", "smoke-test", "report", "record"]
+    },
+    {
+      "name": "build-checkpoint",
+      "source": "./plugins/build-checkpoint",
+      "description": "Progressive validation gates that trigger testing at natural breakpoints. Quality checks before commits, pushes to main, and PRs.",
+      "version": "1.1.0",
+      "category": "quality",
+      "tags": ["hooks", "validation", "quality", "git", "workflow", "deploy"],
+      "hooks": {
+        "PreToolUse": {
+          "git commit": ["build-checkpoint:pre-commit"],
+          "git push": ["build-checkpoint:pre-push"],
+          "gh pr create": ["build-checkpoint:pre-pr"]
+        }
+      },
+      "skills": ["configure", "pre-commit", "pre-push", "pre-pr", "skip"]
+    },
+    {
+      "name": "screenshot-journal",
+      "source": "./plugins/screenshot-journal",
+      "description": "Visual build history that captures your app's state at key moments. Build a timeline of progress with screenshots.",
+      "version": "1.0.0",
+      "category": "documentation",
+      "tags": ["screenshots", "documentation", "visual", "history", "progress"],
+      "requires": {
+        "mcp": ["playwright"]
+      },
+      "skills": ["capture", "compare", "timeline"]
+    },
+    {
+      "name": "flow-questions",
+      "source": "./plugins/flow-questions",
+      "description": "Hook-driven prompts that ask the right questions at the right moments. Guides thinking about validation and UX.",
+      "version": "1.0.0",
+      "category": "coaching",
+      "tags": ["coaching", "validation", "hooks", "questions", "ux", "guidance"],
+      "hooks": {
+        "PostToolUse": {
+          "Write": ["flow-questions:on-new-file"],
+          "Edit": ["flow-questions:on-edit"]
+        }
+      },
+      "skills": ["on-new-file", "on-edit", "prompt-me", "configure"]
     }
   ]
 }

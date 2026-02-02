@@ -1,0 +1,26 @@
+{
+  "name": "screenshot-journal",
+  "description": "Visual build history that captures your app's state at key moments. Build a timeline of progress with annotated screenshots.",
+  "version": "1.0.0",
+  "author": {
+    "name": "MVP Club Consulting"
+  },
+  "keywords": ["screenshots", "documentation", "visual", "history", "progress", "playwright"],
+  "requires": {
+    "mcp": ["playwright"]
+  },
+  "skills": [
+    {
+      "name": "capture",
+      "description": "Take an annotated screenshot right now"
+    },
+    {
+      "name": "compare",
+      "description": "Side-by-side: PRD mockup vs actual implementation"
+    },
+    {
+      "name": "timeline",
+      "description": "Generate a visual history of the build"
+    }
+  ]
+}

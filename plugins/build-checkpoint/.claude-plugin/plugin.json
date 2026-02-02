@@ -1,0 +1,38 @@
+{
+  "name": "build-checkpoint",
+  "description": "Progressive validation gates that trigger testing at natural breakpoints. Configurable hooks ensure quality without slowing you down.",
+  "version": "1.1.0",
+  "author": {
+    "name": "MVP Club Consulting"
+  },
+  "keywords": ["hooks", "validation", "quality", "testing", "git", "workflow"],
+  "hooks": {
+    "PreToolUse": {
+      "git commit": ["build-checkpoint:pre-commit"],
+      "git push": ["build-checkpoint:pre-push"],
+      "gh pr create": ["build-checkpoint:pre-pr"]
+    }
+  },
+  "skills": [
+    {
+      "name": "configure",
+      "description": "Set up which checks run at which triggers"
+    },
+    {
+      "name": "pre-commit",
+      "description": "Validation that runs before commits"
+    },
+    {
+      "name": "pre-push",
+      "description": "Validation before pushing to main (the deploy gate)"
+    },
+    {
+      "name": "pre-pr",
+      "description": "Comprehensive validation before pull requests"
+    },
+    {
+      "name": "skip",
+      "description": "Temporarily bypass a checkpoint with a note"
+    }
+  ]
+}
