@@ -6,7 +6,7 @@ Vibe coding tools that turn new builders into confident AI-first practitioners.
 
 ```bash
 # Add the marketplace (fetches from GitHub - auto-updates on each use)
-/plugin marketplace add mvp-club/mvp-club-skills
+/plugin marketplace add MVP-Club-AI/mvp-club-skills
 
 # Install a plugin
 /plugin install prd-manager@mvp-club-skills
