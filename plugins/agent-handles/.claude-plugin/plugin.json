@@ -5,19 +5,5 @@
   "author": {
     "name": "MVP Club Consulting"
   },
-  "keywords": ["testing", "automation", "playwright", "accessibility", "agent-handles", "validation"],
-  "skills": [
-    {
-      "name": "audit",
-      "description": "Scan codebase for missing agent-handles on interactive elements"
-    },
-    {
-      "name": "suggest",
-      "description": "Propose agent-handle names following the naming convention"
-    },
-    {
-      "name": "add",
-      "description": "Insert agent-handle attributes into components"
-    }
-  ]
+  "keywords": ["testing", "automation", "playwright", "accessibility", "agent-handles", "validation"]
 }

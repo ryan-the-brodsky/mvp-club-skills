@@ -15,8 +15,7 @@
       "description": "Main onboarding wizard. Install plugins and configure hooks in one conversation based on your workflow.",
       "version": "1.0.0",
       "category": "setup",
-      "tags": ["onboarding", "setup", "installation", "wizard", "getting-started"],
-      "skills": ["setup"]
+      "tags": ["onboarding", "setup", "installation", "wizard", "getting-started"]
     },
     {
       "name": "prd-manager",
@@ -24,8 +23,7 @@
       "description": "Complete PRD management suite. Generate, update, and compare PRDs throughout your build process.",
       "version": "1.0.0",
       "category": "productivity",
-      "tags": ["planning", "prd", "requirements", "beginner-friendly", "hooks"],
-      "skills": ["generate", "update", "compare"]
+      "tags": ["planning", "prd", "requirements", "beginner-friendly", "hooks"]
     },
     {
       "name": "work-loop-coach",
@@ -33,8 +31,7 @@
       "description": "Embeds the Work Loop methodology (Articulate → Build → Prompt → Execute → Evaluate → Iterate) into your building process.",
       "version": "1.0.0",
       "category": "methodology",
-      "tags": ["workflow", "coaching", "methodology", "human-ai-teams"],
-      "skills": ["coach"]
+      "tags": ["workflow", "coaching", "methodology", "human-ai-teams"]
     },
     {
       "name": "agent-handles",
@@ -42,8 +39,7 @@
       "description": "Make your app AI-testable with semantic handles. Audit, suggest, and add agent-handle attributes for Playwright testing.",
       "version": "1.0.0",
       "category": "testing",
-      "tags": ["testing", "automation", "playwright", "accessibility", "validation"],
-      "skills": ["audit", "suggest", "add"]
+      "tags": ["testing", "automation", "playwright", "accessibility", "validation"]
     },
     {
       "name": "claude-pilot",
@@ -51,11 +47,7 @@
       "description": "Claude becomes your first user. Test your app with Playwright, walk through user flows, and get a real user's perspective.",
       "version": "1.0.0",
       "category": "testing",
-      "tags": ["testing", "playwright", "user-testing", "validation", "screenshots"],
-      "requires": {
-        "mcp": ["playwright"]
-      },
-      "skills": ["walkthrough", "smoke-test", "report", "record"]
+      "tags": ["testing", "playwright", "user-testing", "validation", "screenshots"]
     },
     {
       "name": "build-checkpoint",
@@ -63,15 +55,7 @@
       "description": "Progressive validation gates that trigger testing at natural breakpoints. Quality checks before commits, pushes to main, and PRs.",
       "version": "1.1.0",
       "category": "quality",
-      "tags": ["hooks", "validation", "quality", "git", "workflow", "deploy"],
-      "hooks": {
-        "PreToolUse": {
-          "git commit": ["build-checkpoint:pre-commit"],
-          "git push": ["build-checkpoint:pre-push"],
-          "gh pr create": ["build-checkpoint:pre-pr"]
-        }
-      },
-      "skills": ["configure", "pre-commit", "pre-push", "pre-pr", "skip"]
+      "tags": ["hooks", "validation", "quality", "git", "workflow", "deploy"]
     },
     {
       "name": "screenshot-journal",
@@ -79,11 +63,7 @@
       "description": "Visual build history that captures your app's state at key moments. Build a timeline of progress with screenshots.",
       "version": "1.0.0",
       "category": "documentation",
-      "tags": ["screenshots", "documentation", "visual", "history", "progress"],
-      "requires": {
-        "mcp": ["playwright"]
-      },
-      "skills": ["capture", "compare", "timeline"]
+      "tags": ["screenshots", "documentation", "visual", "history", "progress"]
     },
     {
       "name": "flow-questions",
@@ -91,14 +71,7 @@
       "description": "Hook-driven prompts that ask the right questions at the right moments. Guides thinking about validation and UX.",
       "version": "1.0.0",
       "category": "coaching",
-      "tags": ["coaching", "validation", "hooks", "questions", "ux", "guidance"],
-      "hooks": {
-        "PostToolUse": {
-          "Write": ["flow-questions:on-new-file"],
-          "Edit": ["flow-questions:on-edit"]
-        }
-      },
-      "skills": ["on-new-file", "on-edit", "prompt-me", "configure"]
+      "tags": ["coaching", "validation", "hooks", "questions", "ux", "guidance"]
     },
     {
       "name": "initialize-hooks",
@@ -106,8 +79,7 @@
       "description": "One-command setup for MVP Club Skills hooks. Interactive wizard to configure validation gates and coaching prompts.",
       "version": "1.0.0",
       "category": "setup",
-      "tags": ["hooks", "setup", "configuration", "onboarding", "wizard"],
-      "skills": ["setup", "profiles", "add-hook", "remove-hook"]
+      "tags": ["hooks", "setup", "configuration", "onboarding", "wizard"]
     }
   ]
 }

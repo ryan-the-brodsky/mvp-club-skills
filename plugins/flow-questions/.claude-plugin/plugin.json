@@ -5,29 +5,5 @@
   "author": {
     "name": "MVP Club Consulting"
   },
-  "keywords": ["coaching", "validation", "hooks", "questions", "ux", "guidance"],
-  "hooks": {
-    "PostToolUse": {
-      "Write": ["flow-questions:on-new-file"],
-      "Edit": ["flow-questions:on-edit"]
-    }
-  },
-  "skills": [
-    {
-      "name": "on-new-file",
-      "description": "Prompts after creating a new component/file"
-    },
-    {
-      "name": "on-edit",
-      "description": "Prompts after editing code (detects patterns)"
-    },
-    {
-      "name": "prompt-me",
-      "description": "Manually trigger a validation question"
-    },
-    {
-      "name": "configure",
-      "description": "Adjust question frequency and types"
-    }
-  ]
+  "keywords": ["coaching", "validation", "hooks", "questions", "ux", "guidance"]
 }

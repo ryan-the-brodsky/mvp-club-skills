@@ -5,26 +5,5 @@
   "author": {
     "name": "MVP Club Consulting"
   },
-  "keywords": ["testing", "playwright", "user-testing", "validation", "screenshots", "automation"],
-  "requires": {
-    "mcp": ["playwright"]
-  },
-  "skills": [
-    {
-      "name": "walkthrough",
-      "description": "Follow a user journey, screenshot each step"
-    },
-    {
-      "name": "smoke-test",
-      "description": "Quick check - can I load, click, navigate?"
-    },
-    {
-      "name": "report",
-      "description": "Generate a First User Report with screenshots and friction notes"
-    },
-    {
-      "name": "record",
-      "description": "Watch Claude use the app with live narration"
-    }
-  ]
+  "keywords": ["testing", "playwright", "user-testing", "validation", "screenshots", "automation"]
 }

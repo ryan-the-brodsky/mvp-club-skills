@@ -5,11 +5,5 @@
   "author": {
     "name": "MVP Club Consulting"
   },
-  "keywords": ["setup", "onboarding", "installation", "wizard", "getting-started"],
-  "skills": [
-    {
-      "name": "setup",
-      "description": "Interactive wizard to install plugins and configure hooks"
-    }
-  ]
+  "keywords": ["setup", "onboarding", "installation", "wizard", "getting-started"]
 }

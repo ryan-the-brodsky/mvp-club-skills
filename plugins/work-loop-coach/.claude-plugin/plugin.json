@@ -5,11 +5,5 @@
   "author": {
     "name": "MVP Club Consulting"
   },
-  "keywords": ["methodology", "workflow", "coaching", "human-ai-teams"],
-  "skills": [
-    {
-      "name": "coach",
-      "description": "Guide through Work Loop methodology"
-    }
-  ]
+  "keywords": ["methodology", "workflow", "coaching", "human-ai-teams"]
 }

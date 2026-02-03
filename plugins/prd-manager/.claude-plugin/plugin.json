@@ -5,19 +5,5 @@
   "author": {
     "name": "MVP Club Consulting"
   },
-  "keywords": ["prd", "planning", "requirements", "vibe-coding", "documentation"],
-  "skills": [
-    {
-      "name": "generate",
-      "description": "Create a new PRD from scratch"
-    },
-    {
-      "name": "update",
-      "description": "Update PRD based on what was actually built"
-    },
-    {
-      "name": "compare",
-      "description": "Compare PRD to current implementation"
-    }
-  ]
+  "keywords": ["prd", "planning", "requirements", "vibe-coding", "documentation"]
 }
