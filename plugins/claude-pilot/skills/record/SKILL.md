@@ -12,6 +12,28 @@ You are exploring an app in real-time, narrating your experience as you go. Thin
 - App should be running
 - No script or flow required—this is exploratory
 
+## Before Exploring: Load Agent Handles
+
+**Before interacting with the app**, check if an `AGENT-HANDLES.md` file exists in the project root. If it does, read it first. This file contains a complete map of all `agent-handle` selectors in the app — element types, file locations, and ready-to-use Playwright selectors. Having this context helps you understand the app's structure and use reliable selectors when interacting with elements.
+
+## Screenshot Directory
+
+At the start of each recording session, create a new directory for all screenshots:
+
+```
+screenshots/record-YYYY-MM-DD-HH-MM/
+```
+
+Example: `screenshots/record-2024-01-15-10-45/`
+
+All screenshots for this session go inside that folder. Number them sequentially with a description:
+- `01-first-impression.png`
+- `02-after-signup-click.png`
+- `03-form-filled.png`
+- `04-error-state.png`
+
+Create the `screenshots/` directory if it doesn't already exist. Never reuse a previous run's folder — every invocation gets a fresh timestamped directory.
+
 ## The Approach
 
 Pretend you're a real user encountering this app for the first time. Narrate your:
@@ -79,7 +101,7 @@ Capture screenshots at key moments and reference them in narration:
 
 ```
 I just clicked submit and got an error. Let me screenshot this...
-[Screenshot: record-error-state.png]
+[Screenshot: screenshots/record-2024-01-15-10-45/04-error-state.png]
 
 The error says "Invalid email format" but I'm pretty sure test@example.com is valid. Maybe there's a bug here.
 ```

@@ -12,6 +12,28 @@ You are performing a quick sanity check on an app using Playwright. The goal is 
 - App should be running (ask the user for the URL if not provided)
 - Agent handles help but aren't required
 
+## Before Testing: Load Agent Handles
+
+**Before interacting with any elements**, check if an `AGENT-HANDLES.md` file exists in the project root. If it does, read it first. This file contains a complete map of all `agent-handle` selectors in the app — element types, file locations, and ready-to-use Playwright selectors. Use this as your primary reference for finding and targeting elements throughout the test.
+
+## Screenshot Directory
+
+At the start of each test run, create a new directory for all screenshots:
+
+```
+screenshots/smoke-test-YYYY-MM-DD-HH-MM/
+```
+
+Example: `screenshots/smoke-test-2024-01-15-14-30/`
+
+All screenshots for this run go inside that folder. Number them sequentially:
+- `01-initial-load.png`
+- `02-after-click.png`
+- `03-navigation.png`
+- `04-error-state.png`
+
+Create the `screenshots/` directory if it doesn't already exist. Never reuse a previous run's folder — every invocation gets a fresh timestamped directory.
+
 ## The Smoke Test Checklist
 
 Run through these checks quickly:
@@ -40,15 +62,17 @@ Run through these checks quickly:
 ## Using Playwright
 
 ```javascript
-// Basic smoke test pattern
+// Create run directory: screenshots/smoke-test-YYYY-MM-DD-HH-MM/
+const runDir = `screenshots/smoke-test-${timestamp}`;
+
 await page.goto(appUrl);
-await page.screenshot({ path: 'smoke-1-initial.png' });
+await page.screenshot({ path: `${runDir}/01-initial-load.png` });
 
 // Find main action (prefer agent-handle, fall back to text)
 const mainButton = await page.locator('[agent-handle*="button"]').first()
   || await page.locator('button').first();
 await mainButton.click();
-await page.screenshot({ path: 'smoke-2-after-click.png' });
+await page.screenshot({ path: `${runDir}/02-after-click.png` });
 
 // Check for errors
 const errors = await page.evaluate(() => window.__errors || []);
@@ -77,12 +101,12 @@ Priority order:
 
 ### Visual ✅
 - Main layout renders correctly
-- [Screenshot: smoke-initial.png]
+- [Screenshot: screenshots/smoke-test-2024-01-15-14-30/01-initial-load.png]
 
 ### Interaction ✅
 - Clicked "Get Started" button
 - Modal appeared as expected
-- [Screenshot: smoke-after-click.png]
+- [Screenshot: screenshots/smoke-test-2024-01-15-14-30/02-after-click.png]
 
 ### Navigation ✅
 - Navigated to /dashboard
@@ -106,7 +130,7 @@ Don't stop at the first failure. Complete all checks and report:
 - Clicked "Sign In" button
 - **ERROR:** Button click did not trigger any action
 - Console shows: "TypeError: handleSubmit is not defined"
-- [Screenshot: smoke-error.png]
+- [Screenshot: screenshots/smoke-test-2024-01-15-14-30/03-error-state.png]
 ```
 
 ## After the Smoke Test

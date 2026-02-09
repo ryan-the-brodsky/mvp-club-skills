@@ -30,7 +30,7 @@ Examples:
 
 1. **Scan the codebase** for component files (`.jsx`, `.tsx`, `.vue`, `.svelte`, `.html`)
 2. **Identify interactive elements** in each file
-3. **Check for existing handles** - look for `agent-handle=`, `data-agent=`, or `data-testid=` attributes
+3. **Check for existing handles** - look for `agent-handle=` or `data-testid=` attributes
 4. **Report findings** organized by file and severity
 
 ## Output Format
@@ -67,8 +67,12 @@ These files have good handle coverage:
 
 Be helpful, not judgmental. Many codebases don't have handles—that's why this tool exists. Frame findings as opportunities, not failures.
 
+## AGENT-HANDLES.md
+
+If the project already has an `AGENT-HANDLES.md` file, check whether it's out of date based on your audit findings. If handles have been added or removed since it was last generated, note this in your report and suggest running `agent-handles:add` to regenerate it.
+
 ## After the Audit
 
 Suggest next steps:
-- "Want me to add these handles? Try `agent-handles:add`"
+- "Want me to add these handles? Try `agent-handles:add` — it will also generate an AGENT-HANDLES.md reference file"
 - "Once you have handles, you can run `claude-pilot:smoke-test` to verify your app works"

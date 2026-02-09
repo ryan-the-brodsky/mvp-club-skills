@@ -12,6 +12,22 @@ You are generating a comprehensive report of your experience using an app as its
 - Or, start fresh and do exploration now to generate the report
 - Playwright MCP required
 
+## Before Testing: Load Agent Handles
+
+If starting fresh or re-testing, check if an `AGENT-HANDLES.md` file exists in the project root. If it does, read it first. This file contains a complete map of all `agent-handle` selectors — use it as your reference for targeting elements reliably.
+
+## Screenshot Directory
+
+If starting fresh and taking new screenshots, create a new directory for this run:
+
+```
+screenshots/report-YYYY-MM-DD-HH-MM/
+```
+
+If compiling from previous test runs, reference the screenshots in their existing `screenshots/` subdirectories (e.g., `screenshots/smoke-test-2024-01-15-14-30/`, `screenshots/walkthrough-2024-01-15-16-00/`).
+
+Create the `screenshots/` directory if it doesn't already exist. Never reuse a previous run's folder — every invocation gets a fresh timestamped directory.
+
 ## Report Structure
 
 Generate a report following this template:

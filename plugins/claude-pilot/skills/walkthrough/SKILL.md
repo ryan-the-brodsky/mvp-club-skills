@@ -15,6 +15,12 @@ You are walking through a complete user journey in an app using Playwright, docu
 
 ## Before Starting
 
+### Load Agent Handles
+
+**First**, check if an `AGENT-HANDLES.md` file exists in the project root. If it does, read it before doing anything else. This file contains a complete map of all `agent-handle` selectors in the app — element types, file locations, and ready-to-use Playwright selectors. Use this as your primary reference for finding and targeting elements throughout the walkthrough.
+
+### Clarify the Flow
+
 Ask the user (if not already clear):
 1. "What flow should I walk through?" (signup, checkout, onboarding, etc.)
 2. "Where does it start?" (URL, entry point)
@@ -22,6 +28,25 @@ Ask the user (if not already clear):
 4. "What should success look like?" (final state)
 
 If there's a PRD, reference the User Flow section.
+
+## Screenshot Directory
+
+At the start of each walkthrough, create a new directory for all screenshots:
+
+```
+screenshots/walkthrough-YYYY-MM-DD-HH-MM/
+```
+
+Example: `screenshots/walkthrough-2024-01-15-16-00/`
+
+All screenshots for this run go inside that folder. Number them sequentially with a description:
+- `01-landing-page.png`
+- `02-signup-form.png`
+- `03-loading-state.png`
+- `04-dashboard-success.png`
+- `05-error-state.png`
+
+Create the `screenshots/` directory if it doesn't already exist. Never reuse a previous run's folder — every invocation gets a fresh timestamped directory.
 
 ## Walkthrough Process
 
@@ -68,7 +93,7 @@ For every action in the flow:
 **What I'm doing:** Clicking the "Start Free Trial" button
 **What happened:** Modal appeared with signup form
 
-[Screenshot: walkthrough-1-landing.png]
+[Screenshot: screenshots/walkthrough-2024-01-15-16-00/01-landing-page.png]
 
 **Observations:**
 - CTA is clear and prominent ✓
@@ -82,8 +107,8 @@ For every action in the flow:
 **What I'm doing:** Filling in test@example.com and a password, clicking "Create Account"
 **What happened:** Form submitted, brief loading state, then redirected to dashboard
 
-[Screenshot: walkthrough-2-signup-form.png]
-[Screenshot: walkthrough-3-loading.png]
+[Screenshot: screenshots/walkthrough-2024-01-15-16-00/02-signup-form.png]
+[Screenshot: screenshots/walkthrough-2024-01-15-16-00/03-loading-state.png]
 
 **Observations:**
 - No password requirements shown until after error - could show upfront
@@ -96,7 +121,7 @@ For every action in the flow:
 **What I see:** Dashboard with welcome message "Welcome, test@example.com!"
 **What happened:** Successfully signed up and logged in
 
-[Screenshot: walkthrough-4-dashboard.png]
+[Screenshot: screenshots/walkthrough-2024-01-15-16-00/04-dashboard-success.png]
 
 **Observations:**
 - Welcome message confirms identity ✓
@@ -143,7 +168,7 @@ For every action in the flow:
 ### App Error
 ```markdown
 **What happened:** Page showed error message
-[Screenshot: walkthrough-error.png]
+[Screenshot: screenshots/walkthrough-2024-01-15-16-00/05-error-state.png]
 **Console errors:** [list any errors]
 **Stopping walkthrough at this point**
 ```

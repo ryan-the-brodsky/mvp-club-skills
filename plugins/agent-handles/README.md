@@ -34,7 +34,7 @@ Scan your codebase for interactive elements (buttons, inputs, links, forms) that
 Get naming suggestions for elements following the convention.
 
 ### `agent-handles:add`
-Have Claude add handles to your components.
+Have Claude add handles to your components. Also generates an `AGENT-HANDLES.md` reference file listing all handles, their elements, file locations, and ready-to-use Playwright/Puppeteer selectors. The claude-pilot testing skills automatically read this file before any testing session.
 
 ## Part of the Work Loop
 
